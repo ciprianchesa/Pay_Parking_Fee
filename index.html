@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Parking</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+<div class="container">
+  <div class="parking" id="parking"> 
+    <!--Elementele necesare pt introducerea unui nr de masina de la tastatura in coloana 1-->
+    <div class="product" id="coloana1">
+      <div class="level">INTRARE</div>
+      <p><b>Pas 1: Introduceți număr mașină pentru intrare:</b></p>
+      <input type="text" id="newcar" placeholder="Ex: B133JOY" required>
+      <button type="button" id="myBtn1" value="Clear" onclick="carPark(document.getElementById('newcar').value); 
+          eraseText(document.getElementById('newcar').value)">NEW</button>
+      <p id="carIn"></p> 
+    </div>
+
+    <!--Elementele necesare la iesirea unei masini din parcare cu confirmare la selectarea masinii-->
+    <div class="product" id="coloana2">
+      <div class="level">STATUS</div>
+      <p><b>Pas 2: Introduceți număr mașină pentru ieșire:</b></p>
+      <input type="text" id="oldcar" placeholder="Ex: B100DEV" required>
+      <button type="button" id="myBtn2" onclick="beforeOut(document.getElementById('beforeOut').value);
+          eraseText(document.getElementById('beforeOut').value)">OK</button>
+      <p id="beforeOut"></p>
+
+      <!--Elementele necesare pt selectarea timpul de stationare pentru fiecare masina-->
+      <p><b>Pas 3: Introduceți timpul de staționare:</b></p>
+      <p id="hour">Total ore:</p>
+      <select id="quantity1" name="qua">
+        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+        <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option>
+        <option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option>
+        <option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+        <option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option>
+      </select>      
+
+      <p id="minute">Total minute:</p>
+      <select id="quantity2" name="qua">
+        <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+        <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option>
+        <option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option>
+        <option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+        <option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option>
+        <option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option>
+        <option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option>
+        <option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option>
+        <option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option>
+        <option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option>
+      </select>
+
+      <!--Orice client poate sa vada nr de locuri disponibile in parcare la un moment dat-->
+      <p><b>Număr de locuri disponibile în parcare:</b></p>
+      <button type="button" onclick="locuriDisponibile(document.getElementById('nrlocuri').value)">CHECK</button>
+      <p id="nrlocuri"></p>
+    </div>
+
+  <div class="product" id="coloana3">
+    <div class="level">IEȘIRE</div>
+
+    <!--Dupa vizualizare sumar masina, butonul confirmare va scoate masina din lista-->
+    <p><b>Pas 4: Introduceți poziția mașinii pentru confirmare:</b></p>
+    <input type="text" id="confirmare" placeholder="Ex: 3" required>
+    <button type="button" id="myBtn3" onclick="calcCharge(document.getElementById('oldcar', 'quantity1', 'quantity2').value);
+        eraseText(document.getElementById('confirmare').value)">OK</button>
+    <p id="carOut"></p>
+
+    <!--Interogare lista masini din parcare-->
+    <p><b>Interogare listă mașini:</b></p>
+    <button type="button" onclick="check(document.getElementById('carscheck').value)">CHECK</button>
+    <p id="carscheck"></p> 
+    </div>
+    <!--Buton de Refresh la pagina. Se va restarta, va incepe tot procesul de la zero-->
+  <button onClick="window.location.reload();">Refresh!</button>
+  </div>
+</div>
+</body>
+</html>

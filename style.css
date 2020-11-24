@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+#parking {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+  
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 15px;
+  border: 2px solid rgb(3, 3, 155);
+  border-radius: 4px;
+  background-color: #d5dce9;
+}
+  
+.product > .level {
+  width: 100%;
+  color: black;
+  background-color: #5bbdc4;
+  padding: 10px 0;
+  font-weight: 700;
+}
+
+.product > button {
+  border: 4px;
+  margin: 4px 2px;
+  background-color: #5ad3e7;
+  border-radius: 3px;
+  padding: 4px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+}
+  
+.product > button:hover {
+  background-color: #3264C2;
+  transition: background-color 1s;
+}
+
+#parking > button {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  margin-top: 16px;
+  padding: 4px 6px;
+  justify-content: center;
+  font-size: 15px;
+  background-color: #5ad3e7;
+  cursor: pointer;  
+}
+  
+  @media (max-width: 800px) {
+    #parking {
+      flex-direction: column;
+    }
+    .product {
+      max-width: 260px;
+      width: 100%;
+      margin: 7px auto;
+    }
+    #parking > button {
+      width: 70px;
+      align-items: center;
+      flex-direction: column ;
+    }
+  }
