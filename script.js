@@ -28,7 +28,7 @@ output.addEventListener("keyup", function(event) {
 });
 }
 
-//Inregistrare masina intrare
+//new car registration
 function carPark() {
   var intrare;
   intrare = cars.push(document.getElementById("newcar").value);
@@ -44,12 +44,12 @@ function carPark() {
 
     if (cars.length > 10) {
       cars.length = 10; 
-        alert ("Parcarea este plină! Maxim locuri: 10!")
+        alert ("Parking is full!")
       }
-    document.getElementById("carIn").innerHTML = "Ați introdus numărul: " + intrare;
+    document.getElementById("carIn").innerHTML = "You entered the car number: " + intrare;
 }
 
-//previzualizare masina inainte de iesire
+//ticket preview before exit
 function beforeOut() {
   var iesire;
 
@@ -61,7 +61,7 @@ function beforeOut() {
     if (iesire > -1) {
       cars.splice(iesire, 0);
     }
-  document.getElementById("beforeOut").innerHTML = "Ați selectat mașina de pe poziția: " + "<b>" + iesire + "</b>";
+  document.getElementById("beforeOut").innerHTML = "You have selected the car from the position: " + "<b>" + iesire + "</b>";
 }
 
 //Interogare lista masinilor din parcare
@@ -81,11 +81,11 @@ function check() {
 
 //Numarul de locuri disponibile in parcare
 function locuriDisponibile() {
-    document.getElementById("nrlocuri").innerHTML = "Total locuri disponibile : " + "<b>" + (10-cars.length) + "</b>";
+    document.getElementById("nrlocuri").innerHTML = "Total parking spaces available : " + "<b>" + (10-cars.length) + "</b>";
 }
   
-//Sumar la iesirea unei masini din parcare
-//Functia va calcula pretul in functie de timpul selectat pentru masina
+//Car ticket
+//Price calculation depending on time
 function calcCharge() {
   var iesire;
   var total=0;
@@ -119,7 +119,6 @@ function calcCharge() {
       + "Timp staționare: " + hour + "h: " + minute +  "min" + "<br>" + "Total tarif staționare: " + total + " Lei" + "<br>" + "Data: " + d;      
 }
 
-//Elimina textul din casutele text la apasarea butonului/Enter pt introducerea unui nou nr de masina
 function eraseText() {
     document.getElementById("newcar").value = "";
     document.getElementById("oldcar").value = "";
