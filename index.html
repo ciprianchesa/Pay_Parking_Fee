@@ -9,67 +9,65 @@
 </head>
 
 <body>
-<div class="container">
-  <div class="parking" id="parking"> 
+  <div class="container" id="parking">
+
     <!--NEW CAR IN PARKING-->
-    <div class="product" id="col1">
+    <div class="product">
       <div class="level">CAR IN</div>
-      <p><b>Step 1: ENTER A NEW CAR:</b></p>
-      <input type="text" id="newcar" placeholder="Ex: CJ88GAP" required>
-      <button type="button" id="myBtn1" value="Clear" onclick="carPark()">NEW</button>
+        <p><b>Step 1: ENTER A NEW CAR:</b></p>
+        <input type="text" id="newcar" placeholder="Ex: CJ88GAP" required>
+          <button type="button" id="myBtn1" value="Clear" onclick="carPark()">NEW</button>
       <p id="carIn"></p> 
     </div>
 
     <!--CONFIRM THE CAR FOR EXIT-->
-    <div class="product" id="col2">
+    <div class="product">
       <div class="level">STATUS</div>
-      <p><b>Step 2: CONFIRM THE CAR:</b></p>
-      <input type="text" id="oldcar" placeholder="Ex: CJ01JOY" required>
-      <button type="button" id="myBtn2" onclick="beforeOut()">OK</button>
-      <p id="beforeOut"></p>
+        <p><b>Step 2: CONFIRM THE CAR:</b></p>
+          <input type="text" id="oldcar" placeholder="Ex: CJ01JOY" required>
+          <button type="button" id="myBtn2" onclick="beforeOut()">OK</button>
+        <p id="beforeOut"></p>
 
-      <!--Elementele necesare pt selectarea timpul de stationare pentru fiecare masina-->
+      <!--ELEMENTS FOR TOTAL TIME PARKING FOR A SELECTED CAR-->
       <p><b>Step 3: TOTAL PARKING TIME:</b></p>
       <p id="hour">Hours:</p>
-      <select id="quantity1" name="qua">
-        <option value="0">0</option><option value="1">1</option><option value="2">2</option>
-        <option value="3">3</option><option value="4">4</option><option value="5">5</option>
-        <option value="6">6</option><option value="7">7</option><option value="8">8</option>
-        <option value="9">9</option><option value="10">10</option>
-      </select>      
+        <select id="quantity1" name="qua">
+          <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+          <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+          <option value="9">9</option><option value="10">10</option>
+        </select>      
 
       <p id="minute">Minutes:</p>
-      <select id="quantity2" name="qua">
-        <option value="0">0</option><option value="1">1</option><option value="2">2</option>
-        <option value="3">3</option><option value="4">4</option><option value="5">5</option>
-        <option value="6">6</option><option value="7">7</option><option value="8">8</option>
-        <option value="9">9</option><option value="10">10</option><option value="11">11</option>
-        <option value="12">12</option><option value="13">13</option><option value="14">14</option>
-      </select>
+        <select id="quantity2" name="qua">
+          <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+          <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+          <option value="9">9</option><option value="10">10</option><option value="11">11</option>
+          <option value="12">12</option><option value="13">13</option><option value="14">14</option>
+        </select>
 
-      <!--Orice client poate sa vada nr de locuri disponibile in parcare la un moment dat-->
       <p><b>Places available in the parking lot:</b></p>
-      <button type="button" onclick="locuriDisponibile()">CHECK</button>
-      <p id="nrlocuri"></p>
+        <button type="button" onclick="locuriDisponibile()">CHECK</button>
+      <p id="spot"></p>
     </div>
 
-  <div class="product" id="col3">
-    <div class="level">CAR OUT</div>
+    <div class="product">
+      <div class="level">CAR OUT</div>
 
-    <!--Dupa vizualizare sumar masina, butonul confirmare va scoate masina din lista-->
-    <p><b>Step 4: SELECT CAR POSITION FOR EXIT:</b></p>
-    <input type="text" id="confirmare" placeholder="Ex: 3" required>
-    <button type="button" id="myBtn3" onclick="calcCharge('oldcar', 'quantity1', 'quantity2')">OK</button>
-    <p id="carOut"></p>
+      <!--VIEW THE CAR BEFORE EXIT-->
+      <p><b>Step 4: SELECT CAR POSITION FOR EXIT:</b></p>
+        <input type="text" id="confirm" placeholder="Ex: 3" required>
+        <button type="button" id="myBtn3" onclick="calcCharge('oldcar', 'quantity1', 'quantity2')">OK</button>
+      <p id="carOut"></p>
 
-    <!--Interogare lista masini din parcare-->
-    <p><b>ALL CARS:</b></p>
-    <button type="button" onclick="check()">CHECK</button>
-    <p id="carscheck"></p> 
+<!--CAR LIST-->
+      <p><b>ALL CARS:</b></p>
+        <button type="button" onclick="check()">CHECK</button>
+      <p id="carscheck"></p> 
     </div>
 
     <button onClick="window.location.reload();">Refresh!</button>
   </div>
-</div>
 </body>
 </html>

@@ -19,7 +19,7 @@ beforeout.addEventListener("keyup", function(event) {
   } 
 });
 
-var output = document.getElementById("confirmare");
+var output = document.getElementById("confirm");
 output.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
@@ -85,11 +85,10 @@ function check() {
 
 //Numarul de locuri disponibile in parcare
 function locuriDisponibile() {
-    document.getElementById("nrlocuri").innerHTML = "Total parking spaces available : " + "<b>" + (10-cars.length) + "</b>";
+    document.getElementById("spot").innerHTML = "Total parking spot available : " + "<b>" + (10-cars.length) + "</b>";
 }
   
-//Car ticket
-//Price calculation depending on time
+//CAR TICKET AND PRICE CALCULATION DEPENDING ON TIME
 function calcCharge() {
   var iesire;
   var total=0;
@@ -100,7 +99,7 @@ function calcCharge() {
   var minute = document.getElementById("quantity2").value;
 
   iesire = cars.filter(function(entry) { return entry.trim() != ''; });
-  iesire = cars.splice(document.getElementById("confirmare").value, 1);
+  iesire = cars.splice(document.getElementById("confirm").value, 1);
   
     iesire += "<br>";
 
@@ -128,5 +127,5 @@ function calcCharge() {
 function eraseText() {
     document.getElementById("newcar").value = "";
     document.getElementById("oldcar").value = "";
-    document.getElementById("confirmare").value = "";
+    document.getElementById("confirm").value = "";
 }
