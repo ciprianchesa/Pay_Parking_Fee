@@ -11,28 +11,26 @@
 <body>
 <div class="container">
   <div class="parking" id="parking"> 
-    <!--Elementele necesare pt introducerea unui nr de masina de la tastatura in coloana 1-->
-    <div class="product" id="coloana1">
-      <div class="level">INTRARE</div>
-      <p><b>Pas 1: Introduceți număr mașină pentru intrare:</b></p>
-      <input type="text" id="newcar" placeholder="Ex: B133JOY" required>
-      <button type="button" id="myBtn1" value="Clear" onclick="carPark(document.getElementById('newcar').value); 
-          eraseText(document.getElementById('newcar').value)">NEW</button>
+    <!--NEW CAR IN PARKING-->
+    <div class="product" id="col1">
+      <div class="level">CAR IN</div>
+      <p><b>Step 1: ENTER A NEW CAR:</b></p>
+      <input type="text" id="newcar" placeholder="Ex: CJ88GAP" required>
+      <button type="button" id="myBtn1" value="Clear" onclick="carPark()">NEW</button>
       <p id="carIn"></p> 
     </div>
 
-    <!--Elementele necesare la iesirea unei masini din parcare cu confirmare la selectarea masinii-->
-    <div class="product" id="coloana2">
+    <!--CONFIRM THE CAR FOR EXIT-->
+    <div class="product" id="col2">
       <div class="level">STATUS</div>
-      <p><b>Pas 2: Introduceți număr mașină pentru ieșire:</b></p>
-      <input type="text" id="oldcar" placeholder="Ex: B100DEV" required>
-      <button type="button" id="myBtn2" onclick="beforeOut(document.getElementById('beforeOut').value);
-          eraseText(document.getElementById('beforeOut').value)">OK</button>
+      <p><b>Step 2: CONFIRM THE CAR:</b></p>
+      <input type="text" id="oldcar" placeholder="Ex: CJ01JOY" required>
+      <button type="button" id="myBtn2" onclick="beforeOut()">OK</button>
       <p id="beforeOut"></p>
 
       <!--Elementele necesare pt selectarea timpul de stationare pentru fiecare masina-->
-      <p><b>Pas 3: Introduceți timpul de staționare:</b></p>
-      <p id="hour">Total ore:</p>
+      <p><b>Step 3: TOTAL PARKING TIME:</b></p>
+      <p id="hour">Hours:</p>
       <select id="quantity1" name="qua">
         <option value="0">0</option><option value="1">1</option><option value="2">2</option>
         <option value="3">3</option><option value="4">4</option><option value="5">5</option>
@@ -40,7 +38,7 @@
         <option value="9">9</option><option value="10">10</option>
       </select>      
 
-      <p id="minute">Total minute:</p>
+      <p id="minute">Minutes:</p>
       <select id="quantity2" name="qua">
         <option value="0">0</option><option value="1">1</option><option value="2">2</option>
         <option value="3">3</option><option value="4">4</option><option value="5">5</option>
@@ -50,28 +48,27 @@
       </select>
 
       <!--Orice client poate sa vada nr de locuri disponibile in parcare la un moment dat-->
-      <p><b>Număr de locuri disponibile în parcare:</b></p>
-      <button type="button" onclick="locuriDisponibile(document.getElementById('nrlocuri').value)">CHECK</button>
+      <p><b>Places available in the parking lot:</b></p>
+      <button type="button" onclick="locuriDisponibile()">CHECK</button>
       <p id="nrlocuri"></p>
     </div>
 
-  <div class="product" id="coloana3">
-    <div class="level">IEȘIRE</div>
+  <div class="product" id="col3">
+    <div class="level">CAR OUT</div>
 
     <!--Dupa vizualizare sumar masina, butonul confirmare va scoate masina din lista-->
-    <p><b>Pas 4: Introduceți poziția mașinii pentru confirmare:</b></p>
+    <p><b>Step 4: SELECT CAR POSITION FOR EXIT:</b></p>
     <input type="text" id="confirmare" placeholder="Ex: 3" required>
-    <button type="button" id="myBtn3" onclick="calcCharge(document.getElementById('oldcar', 'quantity1', 'quantity2').value);
-        eraseText(document.getElementById('confirmare').value)">OK</button>
+    <button type="button" id="myBtn3" onclick="calcCharge('oldcar', 'quantity1', 'quantity2')">OK</button>
     <p id="carOut"></p>
 
     <!--Interogare lista masini din parcare-->
-    <p><b>Interogare listă mașini:</b></p>
-    <button type="button" onclick="check(document.getElementById('carscheck').value)">CHECK</button>
+    <p><b>ALL CARS:</b></p>
+    <button type="button" onclick="check()">CHECK</button>
     <p id="carscheck"></p> 
     </div>
-    <!--Buton de Refresh la pagina. Se va restarta, va incepe tot procesul de la zero-->
-  <button onClick="window.location.reload();">Refresh!</button>
+
+    <button onClick="window.location.reload();">Refresh!</button>
   </div>
 </div>
 </body>

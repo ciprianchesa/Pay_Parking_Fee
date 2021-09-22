@@ -47,6 +47,8 @@ function carPark() {
         alert ("Parking is full!")
       }
     document.getElementById("carIn").innerHTML = "You entered the car number: " + intrare;
+
+    eraseText();
 }
 
 //ticket preview before exit
@@ -62,6 +64,8 @@ function beforeOut() {
       cars.splice(iesire, 0);
     }
   document.getElementById("beforeOut").innerHTML = "You have selected the car from the position: " + "<b>" + iesire + "</b>";
+  
+  eraseText();
 }
 
 //Interogare lista masinilor din parcare
@@ -117,6 +121,8 @@ function calcCharge() {
 
       document.getElementById("carOut").innerHTML = "Mașina care a ieșit este: " + "<b>" + iesire + "</b>" 
       + "Timp staționare: " + hour + "h: " + minute +  "min" + "<br>" + "Total tarif staționare: " + total + " Lei" + "<br>" + "Data: " + d;      
+
+  eraseText()
 }
 
 function eraseText() {
