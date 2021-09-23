@@ -50,18 +50,6 @@
   background-color: #3264C2;
   transition: background-color 1s;
 }
-
-#parking > button {
-  align-items: center;
-  display: flex;
-  height: 40px;
-  margin-top: 16px;
-  padding: 4px 6px;
-  justify-content: center;
-  font-size: 15px;
-  background-color: #5ad3e7;
-  cursor: pointer;  
-}
   
   @media (max-width: 800px) {
     #parking {
