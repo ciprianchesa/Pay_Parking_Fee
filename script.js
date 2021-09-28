@@ -1,33 +1,5 @@
 var cars = [];
 
-//Introducerea unei masini de la tastura apasand tasta enter pt fiecare din cele 3 input text
-window.onload=function(){
-
-var input = document.getElementById("newcar");
-  input.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-      event.preventDefault();
-    document.getElementById("myBtn1").click();
-    }
-});
-
-var beforeout = document.getElementById("oldcar");
-beforeout.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-   document.getElementById("myBtn2").click();
-  } 
-});
-
-var output = document.getElementById("confirm");
-output.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-   document.getElementById("myBtn3").click();
-  } 
-});
-}
-
 //new car registration
 function carPark() {
   var intrare;
@@ -68,7 +40,7 @@ function beforeOut() {
   eraseText();
 }
 
-//Interogare lista masinilor din parcare
+//Query the list of cars in the parking lot
 function check() {
     var lista;
     cars.splice(document.getElementById("carscheck").value, 0);
@@ -83,7 +55,7 @@ function check() {
     document.getElementById("carscheck").innerHTML = lista;
 }
 
-//Numarul de locuri disponibile in parcare
+//Number of places available in the parking lot
 function locuriDisponibile() {
     document.getElementById("spot").innerHTML = "Total parking spot available : " + "<b>" + (10-cars.length) + "</b>";
 }
@@ -129,3 +101,31 @@ function eraseText() {
     document.getElementById("oldcar").value = "";
     document.getElementById("confirm").value = "";
 }
+
+//Introducerea unei masini de la tastura apasand tasta enter pt fiecare din cele 3 input text
+window.onload=function(){
+
+  var input = document.getElementById("newcar");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+      document.getElementById("myBtn1").click();
+      }
+  });
+  
+  var beforeout = document.getElementById("oldcar");
+  beforeout.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+     document.getElementById("myBtn2").click();
+    } 
+  });
+  
+  var output = document.getElementById("confirm");
+  output.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+     document.getElementById("myBtn3").click();
+    } 
+  });
+  }
