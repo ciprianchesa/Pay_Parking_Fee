@@ -90,8 +90,8 @@ function calcCharge() {
               else 
                 total=0;
 
-      document.getElementById("carOut").innerHTML = "Mașina care a ieșit este: " + "<b>" + iesire + "</b>" 
-      + "Timp staționare: " + hour + "h: " + minute +  "min" + "<br>" + "Total tarif staționare: " + total + " Lei" + "<br>" + "Data: " + d;      
+      document.getElementById("carOut").innerHTML = "DONE" + "<br>" + "The car that left the parking lot is: " + "<b>" + iesire + "</b>" 
+      + "Parking time: " + hour + "h: " + minute +  "min" + "<br>" + "Total parking fee: " + total + " Ron" + "<br>" + "Date: " + d;      
 
   eraseText()
 }
@@ -102,7 +102,7 @@ function eraseText() {
     document.getElementById("confirm").value = "";
 }
 
-//Introducerea unei masini de la tastura apasand tasta enter pt fiecare din cele 3 input text
+//ENTER A NEW CAR JUST PRESSING ENTER ON THE KEYBOARD
 window.onload=function(){
 
   var input = document.getElementById("newcar");
